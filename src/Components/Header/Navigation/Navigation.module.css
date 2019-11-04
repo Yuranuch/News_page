@@ -2,5 +2,16 @@
     width: 600px;
     display: flex;
     justify-content: space-between;
-
+}
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+.navigation a:hover {
+    text-decoration: underline;
+}
+.navigation a.active {
+    text-decoration: underline;
 }
