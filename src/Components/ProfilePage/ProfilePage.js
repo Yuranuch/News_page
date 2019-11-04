@@ -7,9 +7,11 @@ import {Redirect, Route} from "react-router-dom";
 
 function ProfilePage(props) {
 
-  if(props.isAuth === false) return <Redirect to ={"/login"}/>
+
+
     return (
         <div className={styles.profile}>
+            {props.isAuth? <Redirect to ={"/profile"}/>:<Redirect to ={"/login"}/>}
             <Route path='/login' render = {()=><LoginPage/>}/>
             PROFILE PAGE
         </div>

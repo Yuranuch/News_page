@@ -6,10 +6,17 @@ import ProfilePage from "./Components/ProfilePage/ProfilePage";
 import NewsPage from "./Components/NewsPage/NewsPage";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import MainPage from "./Components/MainPage/MainPage";
+import {connect} from "react-redux";
+import {setUserData} from "./redux/reducer";
 
-function App() {
+function App(props) {
 
-    let changeLoginForm = () => {
+    let changeLoginForm = (email, login) => {
+        if(email=="1111" && login=="1111") {
+            props.setUserData(email, login, true)
+        }else {
+            alert("Неправильные данные!")
+        }
 
     }
 
@@ -29,4 +36,12 @@ function App() {
     );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setUserData: (email, login, isAuth) => {
+            dispatch(setUserData(email, login, isAuth))
+        }
+    }
+}
+
+export default connect (null, mapDispatchToProps)(App)
