@@ -10,9 +10,18 @@
 .photo img{
     height: 250px;
 }
-.aboutBlock {
-
+.title span {
+    color: dimgray;
+    font-size: 18px;
+    font-weight: bold;
 }
-.aboutBlock span{
-    display: block;
+textarea {
+    color: #1f1f1f;
+    min-width: 500px;
+    min-height: 300px;
+}
+span.hint {
+    font-size: 13px;
+    font-weight: normal;
+
 }

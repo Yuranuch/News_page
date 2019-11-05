@@ -7,7 +7,7 @@ const initialState = {
     login: null,
     userName: null,
     isAuth: false,
-    userInfo: "------"
+
 }
 
 export const reducer = (state=initialState, action) => {
@@ -40,4 +40,3 @@ export const reducer = (state=initialState, action) => {
 
 export const setUserData = (email, login, isAuth, userName) => ({type: SET_USER_DATA, email, login, isAuth,userName})
 export const logout = () => ({type: LOGOUT})
-export const changeProfileInfo = (text) => ({type: CHANGE_PROFILE_INFO, text})
