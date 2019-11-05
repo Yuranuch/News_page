@@ -7,6 +7,7 @@ function MainPage() {
         <div className={styles.main}>
             <h2>Main page</h2>
         </div>
-    );
+    )
 }
-export default  MainPage;
+
+export default MainPage;

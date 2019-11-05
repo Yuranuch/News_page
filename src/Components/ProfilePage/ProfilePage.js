@@ -1,21 +1,22 @@
 import React, {Component} from "react"
 import styles from "./ProfilePage.module.css"
-import {connect} from "react-redux";
-import LoginPage from "../LoginPage/LoginPage";
-import {Redirect, Route} from "react-router-dom";
+import {connect} from "react-redux"
+import LoginPage from "../LoginPage/LoginPage"
+import {Redirect, Route} from "react-router-dom"
 
 class ProfilePage extends Component {
     state = {
         editMode: false,
         userInfo: ""
     }
+
     componentDidMount() {
         this.restoreState()
     }
 
     saveState = () => {
         let stateAsString = JSON.stringify(this.state)
-        localStorage.setItem ("our-state", stateAsString)
+        localStorage.setItem("our-state", stateAsString)
     }
     restoreState = () => {
         let state = {
@@ -29,7 +30,7 @@ class ProfilePage extends Component {
                 "На кота можно наклеить стразы."
         }
         let stateAsString = localStorage.getItem("our-state")
-        if(stateAsString != null) {
+        if (stateAsString != null) {
             state = JSON.parse(stateAsString)
         }
         this.setState(state)
@@ -49,7 +50,9 @@ class ProfilePage extends Component {
         const text = e.currentTarget.value
         this.setState({
             userInfo: text
-        },()=>{this.saveState()})
+        }, () => {
+            this.saveState()
+        })
     }
 
     render() {
@@ -64,12 +67,12 @@ class ProfilePage extends Component {
                     </div>
                     <div className={styles.aboutBlock}>
                         <div className={styles.title}><span>About me</span></div>
-                        {!this.state.editMode?<p onClick={this.activateEditMode}>{this.state.userInfo}</p>:
-                        <textarea
-                            onBlur={this.deActivateEditMode}
-                            onChange={this.onChangeProfileInfo}
-                            value={this.state.userInfo}
-                            autoFocus={true}/>}
+                        {!this.state.editMode ? <p onClick={this.activateEditMode}>{this.state.userInfo}</p> :
+                            <textarea
+                                onBlur={this.deActivateEditMode}
+                                onChange={this.onChangeProfileInfo}
+                                value={this.state.userInfo}
+                                autoFocus={true}/>}
                         <div><span className={styles.hint}> - click on the text to change it</span></div>
                     </div>
                 </div>
@@ -80,15 +83,14 @@ class ProfilePage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        isAuth: state.NewsPage.isAuth,
-        userInfo: state.NewsPage.userInfo
+        isAuth: state.isAuth,
+        userInfo: state.userInfo
     }
 }
 const mapDispatchToProps = (dispatch) => {
-    return {
-    }
+    return {}
 }
 
-export default connect (mapStateToProps, mapDispatchToProps)(ProfilePage) ;
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage)
 
 

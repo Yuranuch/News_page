@@ -1,7 +1,7 @@
 import React from "react"
 import Navigation from "./Navigation/Navigation"
 import styles from "./Header.module.css"
-import AuthContainer from "./AuthContainer/AuthContainer";
+import AuthContainer from "./AuthContainer/AuthContainer"
 
 function Header() {
     return (
@@ -9,6 +9,6 @@ function Header() {
             <Navigation />
             <AuthContainer/>
         </div>
-    );
+    )
 }
-export default Header;
+export default Header

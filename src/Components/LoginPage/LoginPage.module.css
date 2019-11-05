@@ -5,25 +5,29 @@
     justify-content: center;
     text-align: center;
 }
+
 .login span {
     color: darkgray;
     font-size: 11px;
     display: block;
     line-height: 11px;
 }
-span.condInfo  {
+
+span.condInfo {
     color: grey;
     display: block;
     font-size: 15px;
     padding-bottom: 30px;
 }
+
 .loginForm {
     display: flex;
     flex-direction: column;
-   margin: 0 auto;
+    margin: 0 auto;
     align-items: center;
 }
-.loginForm input{
+
+.loginForm input {
     display: block;
     width: 300px;
     height: 30px;
@@ -31,11 +35,13 @@ span.condInfo  {
     padding: 0 10px;
     color: #1f1f1f;
 }
+
 .loginForm div {
     margin-bottom: 20px;
     text-align: left;
 }
-.loginForm button{
+
+.loginForm button {
     height: 25px;
     border: 1px solid #1d1d1d;
     color: #1f1f1f;
@@ -47,6 +53,7 @@ span.condInfo  {
     background: none;
     font-weight: bold;
 }
+
 .loginForm button:hover {
     background-color: grey;
 }

@@ -7,10 +7,9 @@ const initialState = {
     login: null,
     userName: null,
     isAuth: false,
-
 }
 
-export const newsReducer = (state=initialState, action) => {
+export const reducer = (state=initialState, action) => {
     switch(action.type) {
         case SET_USER_DATA:
             return {

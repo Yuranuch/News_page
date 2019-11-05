@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "./AuthContainer.module.css"
-import {NavLink} from "react-router-dom";
-import {connect} from "react-redux";
-import {logout} from "../../../redux/reducer";
+import {NavLink} from "react-router-dom"
+import {connect} from "react-redux"
+import {logout} from "../../../redux/reducer"
 
 function AuthContainer(props) {
 
@@ -11,16 +11,18 @@ function AuthContainer(props) {
     }
     return (
         <div className={styles.authContainer}>
-            {props.isAuth?<div><span>{props.userName}</span><button onClick={onLogOut}>LogOut</button></div>
-                :<NavLink to = "/login" activeClassName={styles.active}>Логин</NavLink>}
+            {props.isAuth ? <div><span>{props.userName}</span>
+                    <button onClick={onLogOut}>LogOut</button>
+                </div>
+                : <NavLink to="/login" activeClassName={styles.active}>Логин</NavLink>}
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        isAuth: state.NewsPage.isAuth,
-        userName: state.NewsPage.userName
+        isAuth: state.isAuth,
+        userName: state.userName
     }
 }
 
