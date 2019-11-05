@@ -57,3 +57,8 @@ span.condInfo {
 .loginForm button:hover {
     background-color: grey;
 }
+span.error {
+    color: red;
+    font-size: 13px;
+    padding-bottom: 15px;
+}

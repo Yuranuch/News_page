@@ -5,9 +5,9 @@ import {Redirect} from "react-router-dom";
 
 class LoginPage extends Component {
     state = {
-        email: "yoyo@mail.ru",
-        login: "yoyo",
-        userName: "Yuranuch",
+        email: "",
+        login: "",
+        userName: "",
     }
 
     onChangeEmail = (e) => {
@@ -38,8 +38,9 @@ class LoginPage extends Component {
         return (
             <div className={styles.login}>
                 <h2>Login</h2>
-                <span
-                    className={styles.condInfo}> If you want to go to the Profile page, please fill out the form,</span>
+                <span className={styles.condInfo}> If you want to go to the Profile page, please fill out the form,</span>
+                <span className={styles.error}>!This is fake authorization, enter the prompted data!</span>
+
                 <form className={styles.loginForm}>
                     <div>
                         <input placeholder="enter email" onChange={this.onChangeEmail} value={this.state.email}/><span>correct email (yoyo@mail.ru)</span>
