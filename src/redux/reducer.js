@@ -10,7 +10,7 @@ const initialState = {
 
 }
 
-export const reducer = (state=initialState, action) => {
+export const newsReducer = (state=initialState, action) => {
     switch(action.type) {
         case SET_USER_DATA:
             return {

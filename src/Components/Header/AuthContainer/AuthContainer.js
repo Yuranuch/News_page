@@ -19,8 +19,8 @@ function AuthContainer(props) {
 
 const mapStateToProps = (state) => {
     return {
-        isAuth: state.isAuth,
-        userName: state.userName
+        isAuth: state.NewsPage.isAuth,
+        userName: state.NewsPage.userName
     }
 }
 

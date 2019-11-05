@@ -4,8 +4,6 @@ import {connect} from "react-redux";
 import LoginPage from "../LoginPage/LoginPage";
 import {Redirect, Route} from "react-router-dom";
 
-
-
 class ProfilePage extends Component {
     state = {
         editMode: false,
@@ -37,7 +35,6 @@ class ProfilePage extends Component {
         this.setState(state)
     }
 
-
     activateEditMode = () => {
         this.setState({
             editMode: true
@@ -53,7 +50,6 @@ class ProfilePage extends Component {
         this.setState({
             userInfo: text
         },()=>{this.saveState()})
-
     }
 
     render() {
@@ -84,8 +80,8 @@ class ProfilePage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        isAuth: state.isAuth,
-        userInfo: state.userInfo
+        isAuth: state.NewsPage.isAuth,
+        userInfo: state.NewsPage.userInfo
     }
 }
 const mapDispatchToProps = (dispatch) => {

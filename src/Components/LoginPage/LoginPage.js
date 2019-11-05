@@ -3,6 +3,8 @@ import React, {Component} from "react"
 import styles from "./LoginPage.module.css"
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
+import {LoginReduxForm} from "./LoginRedux Form";
+
 
 class LoginPage extends Component {
     state = {
@@ -16,7 +18,6 @@ class LoginPage extends Component {
         this.setState({
             email: currentEmail
         })
-
     }
     onChangeLogin = (e) => {
         const currentLogin = e.currentTarget.value
@@ -25,6 +26,7 @@ class LoginPage extends Component {
         })
     }
     onChangeUserName = (e) => {
+        debugger
         const currentUserName = e.currentTarget.value
         this.setState({
             userName: currentUserName
@@ -36,26 +38,31 @@ class LoginPage extends Component {
 
     render() {
 
-        if(this.props.isAuth) return <Redirect to ={"/profile"}/>
+        if (this.props.isAuth) return <Redirect to={"/profile"}/>
         return (
             <div className={styles.login}>
                 <h2>Login</h2>
-                <span className={styles.condInfo}> If you want to go to the Profile page, please fill out the form,</span>
-                <form className={styles.loginForm}>
-                    <div><input placeholder="enter email" onChange={this.onChangeEmail} value ={this.state.email}/><span>correct email (yoyo@mail.ru)</span></div>
-                    <div><input placeholder="enter login" onChange={this.onChangeLogin} value ={this.state.login}/><span>correct login (yoyo)</span></div>
-                    <div><input placeholder="enter you name" onChange={this.onChangeUserName} value ={this.state.userName}/><span>enter you name</span></div>
-                    <div>
-                        <button onClick={this.onChangeForm}>Login</button>
-                    </div>
-                </form>
+                <span
+                    className={styles.condInfo}> If you want to go to the Profile page, please fill out the form,</span>
+                    <LoginReduxForm
+                        onSubmit={this.props.handleSubmit}
+                        onChangeUserName={this.onChangeUserName}
+                        onChangeEmail={this.onChangeEmail}
+                        onChangeLogin={this.onChangeLogin}
+                        onChangeForm={this.onChangeForm}
+                        email={this.state.email}
+                        login={this.state.login}
+                        userName={this.state.userName}
+                        {...this.props}
+                    />
             </div>
         )
     }
 }
+
 const mapStateToProps = (state) => {
     return {
-        isAuth: state.isAuth,
+        isAuth: state.NewsPage.isAuth,
     }
 }
 
