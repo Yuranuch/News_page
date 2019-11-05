@@ -12,7 +12,7 @@ import {setUserData} from "./redux/reducer";
 function App(props) {
 
     let changeLoginForm = (email, login, userName) => {
-        if(email=="1111" && login=="1111") {
+        if(email=="yoyo@mail.ru" && login=="yoyo") {
             props.setUserData(email, login, true, userName)
         }else {
             alert("Неправильные данные!")

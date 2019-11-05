@@ -6,9 +6,9 @@ import {Redirect} from "react-router-dom";
 
 class LoginPage extends Component {
     state = {
-        email: "1111",
-        login: "1111",
-        userName: "Yura",
+        email: "",
+        login: "",
+        userName: "",
     }
 
     onChangeEmail = (e) => {
@@ -40,11 +40,11 @@ class LoginPage extends Component {
         return (
             <div className={styles.login}>
                 <h3>Login</h3>
-
-                <form>
-                    <div><input onChange={this.onChangeEmail} value ={this.state.email}/><span> - correct login (yoyo@mail.ru) </span></div>
-                    <div><input onChange={this.onChangeLogin} value ={this.state.login}/><span> - correct login (yoyo) </span></div>
-                    <div><input onChange={this.onChangeUserName} value ={this.state.userName}/><span> - enter you name </span></div>
+                <span className={styles.condInfo}> If you want to go to the Profile page, please fill out the form,</span>
+                <form className={styles.loginForm}>
+                    <div><input placeholder="enter email" onChange={this.onChangeEmail} value ={this.state.email}/><span>correct email (yoyo@mail.ru)</span></div>
+                    <div><input placeholder="enter login" onChange={this.onChangeLogin} value ={this.state.login}/><span>correct login (yoyo)</span></div>
+                    <div><input placeholder="enter you name" onChange={this.onChangeUserName} value ={this.state.userName}/><span>enter you name</span></div>
                     <div>
                         <button onClick={this.onChangeForm}>Login</button>
                     </div>
