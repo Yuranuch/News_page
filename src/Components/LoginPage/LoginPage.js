@@ -7,7 +7,7 @@ class LoginPage extends Component {
     state = {
         email: "",
         login: "",
-        userName: "",
+        userName: "Cat_Catovskiy",
     }
 
     onChangeEmail = (e) => {

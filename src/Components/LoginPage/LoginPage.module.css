@@ -58,7 +58,7 @@ span.condInfo {
     background-color: grey;
 }
 span.error {
-    color: red;
+    color: coral;
     font-size: 13px;
     padding-bottom: 15px;
 }
