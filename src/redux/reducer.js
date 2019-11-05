@@ -1,5 +1,6 @@
 export const SET_USER_DATA = "SET_USER_DATA"
 export const LOGOUT = "LOGOUT"
+export const CHANGE_PROFILE_INFO = "CHANGE_PROFILE_INFO"
 
 const initialState = {
     email: null,
@@ -12,7 +13,6 @@ const initialState = {
 export const reducer = (state=initialState, action) => {
     switch(action.type) {
         case SET_USER_DATA:
-            debugger
             return {
                 ...state,
                 email: action.email,
@@ -28,9 +28,16 @@ export const reducer = (state=initialState, action) => {
                 userName: null,
                 isAuth: false
             }
+        case CHANGE_PROFILE_INFO:
+            debugger
+            return {
+                ...state,
+                userInfo: action.text
+            }
     }
     return state
 }
 
 export const setUserData = (email, login, isAuth, userName) => ({type: SET_USER_DATA, email, login, isAuth,userName})
 export const logout = () => ({type: LOGOUT})
+export const changeProfileInfo = (text) => ({type: CHANGE_PROFILE_INFO, text})

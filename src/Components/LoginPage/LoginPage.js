@@ -54,7 +54,6 @@ class LoginPage extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    debugger
     return {
         isAuth: state.isAuth,
     }
