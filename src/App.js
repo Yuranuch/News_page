@@ -11,9 +11,9 @@ import {setUserData} from "./redux/reducer";
 
 function App(props) {
 
-    let changeLoginForm = (email, login) => {
+    let changeLoginForm = (email, login, userName) => {
         if(email=="1111" && login=="1111") {
-            props.setUserData(email, login, true)
+            props.setUserData(email, login, true, userName)
         }else {
             alert("Неправильные данные!")
         }
@@ -38,8 +38,8 @@ function App(props) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setUserData: (email, login, isAuth) => {
-            dispatch(setUserData(email, login, isAuth))
+        setUserData: (email, login, isAuth, userName) => {
+            dispatch(setUserData(email, login, isAuth, userName))
         }
     }
 }

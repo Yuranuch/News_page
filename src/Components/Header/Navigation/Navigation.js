@@ -5,7 +5,6 @@ function Navigation() {
     return (
         <div className={styles.navigation}>
             <NavLink to ="/main" activeClassName={styles.active}>Главная</NavLink>
-            <NavLink to = "/login" activeClassName={styles.active}>Логин</NavLink>
             <NavLink to = "/news" activeClassName={styles.active}>Новости</NavLink>
             <NavLink to = "/profile" activeClassName={styles.active}>Профайл</NavLink>
         </div>

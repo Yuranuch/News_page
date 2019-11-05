@@ -1,5 +1,6 @@
 .navigation {
-    width: 600px;
+    width: 400px;
+    margin-left: 30px;
     display: flex;
     justify-content: space-between;
 }
