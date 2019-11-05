@@ -6,6 +6,7 @@ const initialState = {
     login: null,
     userName: null,
     isAuth: false,
+    userInfo: "------"
 }
 
 export const reducer = (state=initialState, action) => {

@@ -6,9 +6,9 @@ import {Redirect} from "react-router-dom";
 
 class LoginPage extends Component {
     state = {
-        email: "",
-        login: "",
-        userName: "",
+        email: "yoyo@mail.ru",
+        login: "yoyo",
+        userName: "Yuranuch",
     }
 
     onChangeEmail = (e) => {
