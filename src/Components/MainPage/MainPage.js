@@ -5,7 +5,7 @@ import styles from "./MainPage.module.css"
 function MainPage() {
     return (
         <div className={styles.main}>
-            MAIN PAGE
+            <h2>Main page</h2>
         </div>
     );
 }

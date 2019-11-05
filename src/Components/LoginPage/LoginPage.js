@@ -39,7 +39,7 @@ class LoginPage extends Component {
         if(this.props.isAuth) return <Redirect to ={"/profile"}/>
         return (
             <div className={styles.login}>
-                <h3>Login</h3>
+                <h2>Login</h2>
                 <span className={styles.condInfo}> If you want to go to the Profile page, please fill out the form,</span>
                 <form className={styles.loginForm}>
                     <div><input placeholder="enter email" onChange={this.onChangeEmail} value ={this.state.email}/><span>correct email (yoyo@mail.ru)</span></div>

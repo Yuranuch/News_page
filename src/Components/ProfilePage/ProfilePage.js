@@ -61,19 +61,20 @@ class ProfilePage extends Component {
             <div className={styles.profile}>
                 {this.props.isAuth ? <Redirect to={"/profile"}/> : <Redirect to={"/login"}/>}
                 <Route path='/login' render={() => <LoginPage/>}/>
-                PROFILE PAGE
+                <h2>Profile page</h2>
                 <div className={styles.infoAboutWrap}>
                     <div className={styles.photo}>
                         <img alt="" src="https://avatarko.ru/img/kartinka/25/zhivotnye_kot_prikol_text_24177.jpg"/>
                     </div>
                     <div className={styles.aboutBlock}>
-                        <div className={styles.title}><span>About me</span><span className={styles.hint}> - click on the text to change it</span></div>
+                        <div className={styles.title}><span>About me</span></div>
                         {!this.state.editMode?<p onClick={this.activateEditMode}>{this.state.userInfo}</p>:
                         <textarea
                             onBlur={this.deActivateEditMode}
                             onChange={this.onChangeProfileInfo}
                             value={this.state.userInfo}
                             autoFocus={true}/>}
+                        <div><span className={styles.hint}> - click on the text to change it</span></div>
                     </div>
                 </div>
             </div>
